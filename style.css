@@ -1,0 +1,79 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body
+{
+    text-align: center;
+}
+.Matrix
+{
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
+	height: 500px;
+    background-color: grey;
+    color: white;
+    border: 6px solid #2c3e50;
+    border-radius: 10px;
+    display: grid;
+	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+.R
+{
+  border: 6px solid #2c3e50;
+  border-radius: 2px;
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.R:hover
+{
+    border: 8px solid #2c3e50;
+    border-radius: 4px;
+}
+.Info
+{
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
+    height: 100px;
+    background-color: grey;
+    color: white;
+    border: 6px solid #2c3e50;
+    border-radius: 10px;
+    display: grid;
+    grid-template: repeat(1,1fr)/repeat(1,1fr);
+}
+.Inf
+{
+    padding-top: 10px;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+}
+.Buttons
+{
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
+    height: 100px;
+    background-color: grey;
+    color: white;
+    border: 6px solid #2c3e50;
+    border-radius: 10px;
+    display: grid;
+    grid-template: repeat(1,1fr)/repeat(2,1fr);
+}
+.Main
+{
+    background-color: #2c3e50;
+    color: white;
+}
