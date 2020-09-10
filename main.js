@@ -1,3 +1,37 @@
+// Mode 
+function Switch() {
+    var A = document.getElementById('TXT').innerHTML;
+    if (A == 'Light Mode') 
+    {
+        OFF();
+    }
+    else 
+    {
+        ON();
+    }
+}
+
+function ON() {
+    document.getElementById('TXT').innerHTML = "Light Mode";
+    document.getElementById('LG').src = "ON.png"
+    document.getElementById('STL').style.color = "white";
+    document.getElementById('STL').style.backgroundColor = "Black";
+    document.getElementById('Mat').style.border = "6px solid White";
+    document.getElementById('In').style.border = "6px solid White";
+    document.getElementById('Bt').style.border = "6px solid White";
+    document.getElementById('In').style.backgroundColor = "#2c3e50";
+
+}
+function OFF() {
+    document.getElementById('TXT').innerHTML = "Dark Mode";
+    document.getElementById('LG').src = "OFF.png"
+    document.getElementById('STL').style.color = "Black";
+    document.getElementById('STL').style.backgroundColor = "white";
+    document.getElementById('Mat').style.border = "6px solid #2c3e50";
+    document.getElementById('In').style.border = "6px solid #2c3e50";
+    document.getElementById('Bt').style.border = "6px solid #2c3e50";
+    document.getElementById('In').style.backgroundColor = "grey";
+}
 // Globle Stuff
 var IDs =
     [

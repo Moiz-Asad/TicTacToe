@@ -9,28 +9,33 @@
     <script src="main.js" defer></script>
 </head>
 
-<body>
-    <br>
-    <H1 class="Head_Text">TIC TAC TOE</H1><br>
+<body id="STL">
+    <div class="All">
+        <br><H1 class="Head_Text">TIC TAC TOE</H1><br>
+        <div class="BTN">
+            <a id="TXT">Dark Mode</a>
+            <a id="SC" onclick="Switch()"><img id="LG" src="OFF.png" width="62" height="32"></a>
+        </div>
+    </div>
+
+    <div id="Mat" class="Matrix">
+        <div class="R" id="I1" onclick="Block1()"></div>
+        <div class="R" id="I2" onclick="Block2()"></div>
+        <div class="R" id="I3" onclick="Block3()"></div>
+        <div class="R" id="I4" onclick="Block4()"></div>
+        <div class="R" id="I5" onclick="Block5()"></div>
+        <div class="R" id="I6" onclick="Block6()"></div>
+        <div class="R" id="I7" onclick="Block7()"></div>
+        <div class="R" id="I8" onclick="Block8()"></div>
+        <div class="R" id="I9" onclick="Block9()"></div>
+    </div><br><br>
+    
+    <div id="In" class="Info">
+        <div class="Inf" id="Displ">Game Started <br> Player 1 : X Turn</div>
+    </div><br>
+    <div id="Bt" class="Buttons">
+        <button class="Main" onclick="MainMenu()">Main Menu</button>
+        <button class="Main" onclick="Restart()">Restart</button>
+    </div>
 </body>
-
-<div class="Matrix">
-    <div class="R" id="I1" onclick="Block1()"></div>
-    <div class="R" id="I2" onclick="Block2()"></div>
-    <div class="R" id="I3" onclick="Block3()"></div>
-    <div class="R" id="I4" onclick="Block4()"></div>
-    <div class="R" id="I5" onclick="Block5()"></div>
-    <div class="R" id="I6" onclick="Block6()"></div>
-    <div class="R" id="I7" onclick="Block7()"></div>
-    <div class="R" id="I8" onclick="Block8()"></div>
-    <div class="R" id="I9" onclick="Block9()"></div>
-</div><br><br>
-
-<div class="Info">
-    <div class="Inf" id="Displ">Game Started <br> Player 1 : X Turn</div>
-</div><br>
-<div class="Buttons">
-    <button class="Main" onclick="MainMenu()">Main Menu</button>
-    <button class="Main" onclick="Restart()">Restart</button>
-</div>
 </html>
