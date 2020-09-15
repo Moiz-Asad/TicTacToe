@@ -72,7 +72,7 @@ body
     display: grid;
     grid-template: repeat(1,1fr)/repeat(2,1fr);
 }
-.Main
+#Main, #Restart
 {
     background-color: #2c3e50;
     color: white;
@@ -102,4 +102,12 @@ body
 .BTN:hover
 {
     font-size: larger;
+}
+#Main:hover
+{
+    font-size: large;
+}
+#Restart:hover
+{
+    font-size: large;
 }

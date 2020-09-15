@@ -72,7 +72,7 @@ function TakeTurn(ID)
         document.getElementById(ID).innerHTML = 'O';
     }
 }
-function ChangeTurn()
+function ChangeTurn(pop)
 {
     if (Turn == 1) 
     {
@@ -97,6 +97,10 @@ function IsValidChoice()
         document.getElementById('Displ').innerHTML = 'Player 2 : O Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
     }
 }
+function Winner()
+{
+    document.getElementById("Mat").style.display = 'none';
+}
 function Play(BLK)
 {
     if (document.getElementById(BLK).innerHTML != 'X' && document.getElementById(BLK).innerHTML != 'O') 
@@ -111,14 +115,12 @@ function Play(BLK)
             if (Turn == 1) 
             {
                 document.getElementById('Displ').innerHTML = 'Player 1 (X) Wins.';
-                setTimeout("MainMenu()", 1000);
-                window.alert('Player 1 (X) Wins.');
+                Winner();
             }
             else 
             {
                 document.getElementById('Displ').innerHTML = 'Player 2 (O) Wins.';
-                setTimeout("MainMenu()", 1000);
-                window.alert('Player 2 (O) Wins.');
+                Winner();
             }
         }
     }
@@ -127,43 +129,18 @@ function Play(BLK)
         IsValidChoice();    
     }
 }
+document.getElementById('I1').addEventListener('click', () => { Play('I1'); });
+document.getElementById('I2').addEventListener('click', () => { Play('I2'); });
+document.getElementById('I3').addEventListener('click', () => { Play('I3'); });
+document.getElementById('I4').addEventListener('click', () => { Play('I4'); });
+document.getElementById('I5').addEventListener('click', () => { Play('I5'); });
+document.getElementById('I6').addEventListener('click', () => { Play('I6'); });
+document.getElementById('I7').addEventListener('click', () => { Play('I7'); });
+document.getElementById('I8').addEventListener('click', () => { Play('I8'); });
+document.getElementById('I9').addEventListener('click', () => { Play('I9'); });
 
-function Block1()
-{
-    Play('I1');
-}
-function Block2() 
-{
-    Play('I2');
-}
-function Block3() 
-{
-    Play('I3');
-}
-function Block4() 
-{
-    Play('I4');
-}
-function Block5() 
-{
-    Play('I5');
-}
-function Block6() 
-{
-    Play('I6');
-}
-function Block7() 
-{
-    Play('I7');
-}
-function Block8() 
-{
-    Play('I8');
-}
-function Block9() 
-{
-    Play('I9');
-}
+
+
 function Hirzon_Check(Player)
 {
     if ((IDs[0] == Player) && (IDs[1] == Player) && (IDs[2] == Player) )
@@ -179,7 +156,7 @@ function Hirzon_Check(Player)
         if ((IDs[6] == Player) && (IDs[7] == Player) && (IDs[8] == Player)) 
         {
             return true;
-    3   }
+        }
     else{ return false;}
 }
 function Vertic_Check(Player) 
@@ -221,7 +198,6 @@ function IsWin()
     {
         return true;
     }
-console.log(Tries);
     
     if(Tries == 8)
     {       
@@ -235,7 +211,5 @@ function MainMenu()
 {
     window.location.replace("index.html");
 }
-function Restart()
-{
-    window.location.replace("Main.html");
-}
+document.getElementById('Main').addEventListener('click', () =>{window.location.replace("index.html");});
+document.getElementById('Restart').addEventListener('click',()=>{window.location.replace("Main.html");});
