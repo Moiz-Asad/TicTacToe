@@ -1,3 +1,37 @@
+// Mode 
+function Switch() {
+    var A = document.getElementById('TXT').innerHTML;
+    if (A == 'Light Mode') 
+    {
+        OFF();
+    }
+    else 
+    {
+        ON();
+    }
+}
+
+function ON() {
+    document.getElementById('TXT').innerHTML = "Light Mode";
+    document.getElementById('LG').src = "ON.png"
+    document.getElementById('STL').style.color = "white";
+    document.getElementById('STL').style.backgroundColor = "Black";
+    document.getElementById('Mat').style.border = "6px solid White";
+    document.getElementById('In').style.border = "6px solid White";
+    document.getElementById('Bt').style.border = "6px solid White";
+    document.getElementById('In').style.backgroundColor = "#2c3e50";
+
+}
+function OFF() {
+    document.getElementById('TXT').innerHTML = "Dark Mode";
+    document.getElementById('LG').src = "OFF.png"
+    document.getElementById('STL').style.color = "Black";
+    document.getElementById('STL').style.backgroundColor = "white";
+    document.getElementById('Mat').style.border = "6px solid #2c3e50";
+    document.getElementById('In').style.border = "6px solid #2c3e50";
+    document.getElementById('Bt').style.border = "6px solid #2c3e50";
+    document.getElementById('In').style.backgroundColor = "grey";
+}
 // Globle Stuff
 var IDs =
     [
@@ -12,7 +46,7 @@ var IDs =
         document.getElementById('I9').innerHTML
     ];
 var Turn = 1;
-
+var Tries = 0;
 // Read Conent
 function ReadIDs()
 {
@@ -50,307 +84,85 @@ function ChangeTurn()
         Turn = 1;
         document.getElementById('Displ').innerHTML = 'Player 1 : X Turn';
     }
+    Tries = Tries + 1;
 }
-function Block1(){
-    
-    if (document.getElementById('I1').innerHTML != 'X' && document.getElementById('I1').innerHTML != 'O')
-    {
-        TakeTurn('I1');
-        if(IsWin() == false)
-        {
-            ChangeTurn();
-        }
-        else
-        {
-            setTimeout("MainMenu()",5000);
-            if (Turn == 1) 
-            {
-                document.getElementById('Displ').innerHTML = 'Player 1 (X) Wins.';
-            }
-            else 
-            {
-                document.getElementById('Displ').innerHTML = 'Player 2 (O) Wins.';
-            }
-        }
-    }
-    else
-    {
-        if(Turn == 1)
-        {
-            document.getElementById('Displ').innerHTML = 'Player 1 : X Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
-        }
-        else
-        {
-            document.getElementById('Displ').innerHTML = 'Player 2 : O Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
-        }
-    }
-}
-function Block2() 
+function IsValidChoice()
 {
-   
-    if (document.getElementById('I2').innerHTML != 'X' && document.getElementById('I2').innerHTML != 'O')
+    if (Turn == 1) 
     {
-        TakeTurn('I2');
-        if(IsWin() == false)
-        {
-            ChangeTurn();
-        }
-        else
-        {
-            setTimeout("MainMenu()", 5000);
-            if (Turn == 1) {
-                document.getElementById('Displ').innerHTML = 'Player 1 (X) Wins.';
-            }
-            else {
-                document.getElementById('Displ').innerHTML = 'Player 2 (O) Wins.';
-            }
-        }
+        document.getElementById('Displ').innerHTML = 'Player 1 : X Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
     }
-    else
+    else 
     {
-        if(Turn == 1)
-        {
-            document.getElementById('Displ').innerHTML = 'Player 1 : X Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
-        }
-        else
-        {
-            document.getElementById('Displ').innerHTML = 'Player 2 : O Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
-        }
+        document.getElementById('Displ').innerHTML = 'Player 2 : O Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
     }
 }
-function Block3() 
+function Play(BLK)
 {
-     if (document.getElementById('I3').innerHTML != 'X' && document.getElementById('I3').innerHTML != 'O')
+    if (document.getElementById(BLK).innerHTML != 'X' && document.getElementById(BLK).innerHTML != 'O') 
     {
-        TakeTurn('I3');
-        
-        if(IsWin() == false)
-        {
-            ChangeTurn();
-        }
-        else
-        {
-            setTimeout("MainMenu()", 5000);
-            if (Turn == 1) {
-                document.getElementById('Displ').innerHTML = 'Player 1 (X) Wins.';
-            }
-            else 
-            {
-                document.getElementById('Displ').innerHTML = 'Player 2 (O) Wins.';
-            }
-         }  
-    }
-    else
-    {
-        if(Turn == 1)
-        {
-            document.getElementById('Displ').innerHTML = 'Player 1 : X Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
-        }
-        else
-        {
-            document.getElementById('Displ').innerHTML = 'Player 2 : O Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
-        }
-    }
-}
-function Block4() 
-{
-    if (document.getElementById('I4').innerHTML != 'X' && document.getElementById('I4').innerHTML != 'O')
-    {
-        TakeTurn('I4');
-        
-        if(IsWin() == false)
-        {
-            ChangeTurn();
-        }
-        else
-        {
-            setTimeout("MainMenu()", 5000);
-            if (Turn == 1) {
-                document.getElementById('Displ').innerHTML = 'Player 1 (X) Wins.';
-            }
-            else {
-                document.getElementById('Displ').innerHTML = 'Player 2 (O) Wins.';
-            }
-        }
-    }
-    else
-    {
-        if(Turn == 1)
-        {
-            document.getElementById('Displ').innerHTML = 'Player 1 : X Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
-        }
-        else
-        {
-            document.getElementById('Displ').innerHTML = 'Player 2 : O Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
-        }
-    }
-}
-function Block5() 
-{
-    if (document.getElementById('I5').innerHTML != 'X' && document.getElementById('I5').innerHTML != 'O')
-    {
-        TakeTurn('I5');
-        
-        if(IsWin() == false)
-        {
-            ChangeTurn();
-        }
-        else
-        {
-            setTimeout("MainMenu()", 5000);
-            if (Turn == 1) {
-                document.getElementById('Displ').innerHTML = 'Player 1 (X) Wins.';
-            }
-            else {
-                document.getElementById('Displ').innerHTML = 'Player 2 (O) Wins.';
-            }
-        }
-    }
-    else
-    {
-        if(Turn == 1)
-        {
-            document.getElementById('Displ').innerHTML = 'Player 1 : X Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
-        }
-        else
-        {
-            document.getElementById('Displ').innerHTML = 'Player 2 : O Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
-        }
-    }
-}
-function Block6() 
-{
-    if (document.getElementById('I6').innerHTML != 'X' && document.getElementById('I6').innerHTML != 'O')
-    {
-        TakeTurn('I6');
-        
-        if(IsWin() == false)
-        {
-            ChangeTurn();
-        }
-        else
-        {
-            setTimeout("MainMenu()", 5000);
-            if (Turn == 1) {
-                document.getElementById('Displ').innerHTML = 'Player 1 (X) Wins.';
-            }
-            else {
-                document.getElementById('Displ').innerHTML = 'Player 2 (O) Wins.';
-            }
-        }     
-    }
-    else
-    {
-        if(Turn == 1)
-        {
-            document.getElementById('Displ').innerHTML = 'Player 1 : X Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
-        }
-        else
-        {
-            document.getElementById('Displ').innerHTML = 'Player 2 : O Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
-        }
-    }
-}
-function Block7() 
-{
-    if (document.getElementById('I7').innerHTML != 'X' && document.getElementById('I7').innerHTML != 'O')
-    {
-        TakeTurn('I7');
-        
-        if(IsWin() == false)
-        {
-            ChangeTurn();
-        }
-        else
-        {
-            setTimeout("MainMenu()", 5000);
-            if (Turn == 1) {
-                document.getElementById('Displ').innerHTML = 'Player 1 (X) Wins.';
-            }
-            else {
-                document.getElementById('Displ').innerHTML = 'Player 2 (O) Wins.';
-            }
-        }
-    }
-    else
-    {
-        if(Turn == 1)
-        {
-            document.getElementById('Displ').innerHTML = 'Player 1 : X Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
-        }
-        else
-        {
-            document.getElementById('Displ').innerHTML = 'Player 2 : O Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
-        }
-    }
-}
-function Block8() 
-{
-    if (document.getElementById('I8').innerHTML != 'X' && document.getElementById('I8').innerHTML != 'O')
-    {
-        TakeTurn('I8');
+        TakeTurn(BLK);
         if (IsWin() == false) 
         {
             ChangeTurn();
         }
         else 
         {
-            setTimeout("MainMenu()", 5000);
             if (Turn == 1) 
             {
                 document.getElementById('Displ').innerHTML = 'Player 1 (X) Wins.';
+                setTimeout("MainMenu()", 1000);
+                window.alert('Player 1 (X) Wins.');
             }
             else 
             {
                 document.getElementById('Displ').innerHTML = 'Player 2 (O) Wins.';
+                setTimeout("MainMenu()", 1000);
+                window.alert('Player 2 (O) Wins.');
             }
         }
     }
-    else
+    else 
     {
-        if(Turn == 1)
-        {
-            document.getElementById('Displ').innerHTML = 'Player 1 : X Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
-        }
-        else
-        {
-            document.getElementById('Displ').innerHTML = 'Player 2 : O Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
-        }
+        IsValidChoice();    
     }
+}
+
+function Block1()
+{
+    Play('I1');
+}
+function Block2() 
+{
+    Play('I2');
+}
+function Block3() 
+{
+    Play('I3');
+}
+function Block4() 
+{
+    Play('I4');
+}
+function Block5() 
+{
+    Play('I5');
+}
+function Block6() 
+{
+    Play('I6');
+}
+function Block7() 
+{
+    Play('I7');
+}
+function Block8() 
+{
+    Play('I8');
 }
 function Block9() 
 {
-     if (document.getElementById('I9').innerHTML != 'X' && document.getElementById('I9').innerHTML != 'O')
-    {
-         TakeTurn('I9');
-         if (IsWin() == false) 
-         {
-             ChangeTurn();
-         }
-         else 
-         {
-             setTimeout("MainMenu()", 5000);
-             if (Turn == 1) 
-             {
-                 document.getElementById('Displ').innerHTML = 'Player 1 (X) Wins.';
-             }
-             else 
-             {
-                 document.getElementById('Displ').innerHTML = 'Player 2 (O) Wins.';
-             }
-         }
-    }
-    else
-    {
-        if(Turn == 1)
-        {
-            document.getElementById('Displ').innerHTML = 'Player 1 : X Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
-        }
-        else
-        {
-            document.getElementById('Displ').innerHTML = 'Player 2 : O Turn <br> Sorry Invalid Choice. Choose an Empty Block!';
-        }
-    }
+    Play('I9');
 }
 function Hirzon_Check(Player)
 {
@@ -405,11 +217,19 @@ function IsWin()
         return true;
     }
     else
-        if ((Vertic_Check('O') == true) || (Hirzon_Check('O') == true) || (Diagon_Check('O') == true)) 
-        {
-            return true;
-        }
-        return false;
+    if ((Vertic_Check('O') == true) || (Hirzon_Check('O') == true) || (Diagon_Check('O') == true)) 
+    {
+        return true;
+    }
+console.log(Tries);
+    
+    if(Tries == 8)
+    {       
+        window.alert("Game Draw Between Player 1 and Player 2.");
+        setTimeout("MainMenu()",1000);
+    }
+    return false;
+    
 }
 function MainMenu()
 {

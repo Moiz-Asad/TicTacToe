@@ -77,3 +77,29 @@ body
     background-color: #2c3e50;
     color: white;
 }
+.All
+{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.BTN
+{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    margin-left: 4rem;
+}
+.BTN:hover
+{
+    font-size: larger;
+}
